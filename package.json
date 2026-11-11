@@ -1,0 +1,23 @@
+{
+  "name": "md-date-utils",
+  "version": "1.0.2",
+  "description": "Lightweight JavaScript date utility library",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "javascript",
+    "date",
+    "time",
+    "utilities"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "md-date-utils": "^1.0.0"
+  }
+}
