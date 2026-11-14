@@ -1,0 +1,240 @@
+# md Date Utils
+
+A lightweight JavaScript date utility library that provides simple and reusable functions for date formatting, calculations, comparisons, and relative time.
+
+## Installation
+
+Install using npm:
+
+```bash
+npm install md-date-utils
+```
+
+Or using Yarn:
+
+```bash
+yarn add md-date-utils
+```
+
+Or using pnpm:
+
+```bash
+pnpm add md-date-utils
+```
+
+## Usage
+
+Import the functions you need into your JavaScript, React, or Node.js project.
+
+```javascript
+import {
+  formatDate,
+  addDays,
+  subtractDays,
+  getDaysDifference,
+  isToday,
+  isWeekend,
+  isDateBetween,
+  getRelativeTime
+} from "md-date-utils";
+```
+
+## Available Functions
+
+### 1. formatDate(date, format)
+
+Format a JavaScript date into a custom string.
+
+```javascript
+formatDate(new Date());
+// Example: 2026-11-11
+
+formatDate(new Date(), "DD-MM-YYYY");
+// Example: 11-11-2026
+
+formatDate(new Date(), "YYYY-MM-DD HH:mm:ss");
+// Example: 2026-11-11 14:30:00
+```
+
+Supported tokens:
+
+| Token | Description |
+|---|---|
+| YYYY | Full year |
+| MM | Month (01-12) |
+| DD | Day (01-31) |
+| HH | Hours (00-23) |
+| mm | Minutes |
+| ss | Seconds |
+
+### 2. addDays(date, days)
+
+Add a specified number of days to a date.
+
+```javascript
+addDays(new Date(), 7);
+```
+
+Returns a JavaScript Date object.
+
+### 3. subtractDays(date, days)
+
+Subtract days from a date.
+
+```javascript
+subtractDays(new Date(), 5);
+```
+
+Returns a JavaScript Date object.
+
+### 4. getDaysDifference(start, end)
+
+Calculate the difference between two dates in calendar days.
+
+```javascript
+getDaysDifference(
+  "2026-11-01",
+  "2026-11-11"
+);
+
+// Output: 10
+```
+
+### 5. isToday(date)
+
+Check whether a date is today.
+
+```javascript
+isToday(new Date());
+
+// Output: true
+```
+
+### 6. isWeekend(date)
+
+Check whether a date falls on Saturday or Sunday.
+
+```javascript
+isWeekend(new Date());
+
+// Output: true or false
+```
+
+### 7. isDateBetween(date, start, end)
+
+Check whether a date falls within a specified date range (inclusive).
+
+```javascript
+isDateBetween(
+  "2026-11-11",
+  "2026-11-01",
+  "2026-11-30"
+);
+
+// Output: true
+```
+
+### 8. getRelativeTime(date)
+
+Get a human-readable relative time for a date.
+
+```javascript
+getRelativeTime(
+  new Date(Date.now() - 3600000)
+);
+
+// Output: 1 hours ago
+```
+
+## React Example
+
+```jsx
+import React from "react";
+
+import {
+  formatDate,
+  addDays,
+  getRelativeTime
+} from "md-date-utils";
+
+function DateExample() {
+  const today = new Date();
+
+  return (
+    <div>
+      <h2>Date Utilities</h2>
+
+      <p>Today: {formatDate(today)}</p>
+
+      <p>
+        Next week: {formatDate(addDays(today, 7))}
+      </p>
+
+      <p>
+        One hour ago: {
+          getRelativeTime(
+            new Date(Date.now() - 3600000)
+          )
+        }
+      </p>
+    </div>
+  );
+}
+
+export default DateExample;
+```
+
+## Node.js Example
+
+```javascript
+import {
+  formatDate,
+  addDays
+} from "md-date-utils";
+
+const today = new Date();
+
+console.log("Today:", formatDate(today));
+
+console.log(
+  "Next week:",
+  formatDate(addDays(today, 7))
+);
+```
+
+## Requirements
+
+- Node.js 18+
+- JavaScript ES Modules support
+
+## Error Handling
+
+Invalid date values passed to `formatDate`, `addDays`, and `getDaysDifference` throw an error.
+
+Validate input dates before using the library.
+
+## Contributing
+
+Contributions are welcome!
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Add tests for new functionality.
+5. Submit a pull request.
+
+## License
+
+MIT License.
+
+## Author
+
+**Mouzam Ali**
+
+GitHub: [mouzam-ali-007](https://github.com/mouzam-ali-007)
+
+npm: [md-date-utils](https://www.npmjs.com/package/md-date-utils)
+
+---
+
+If you find this package useful, please consider giving it a ⭐ on GitHub!
